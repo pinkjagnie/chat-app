@@ -1,0 +1,6 @@
+.App {
+  font-size: calc(10px + 2vmin);
+  color: #1f2b37;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
