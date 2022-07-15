@@ -1,26 +1,28 @@
-const express = require('express');
-const app = express();
-const http = require('http');
-const cors = require('cors');
-const { Server } = require("socket.io");
-app.use(cors());
-const server = http.createServer(app);
+var app = require('express')();
+var http = require('http').createServer(app);
+const PORT = 3001;
 
-const io = new Server(server, {
+var io = require('socket.io')(http, {
   cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  }
+   origin: '*',
+ }
 });
 
-io.on("connection", (socket) => {
-  console.log(socket.id);
-
-  socket.on(("disconnect", () => {
-    console.log("User disconnected", socket.id)
-  }))
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
 })
 
-server.listen(3001, () => {
-  console.log('Server running')
+
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
+
+  socket.on("disconnect", () => {
+    console.log("User Disconnected", socket.id);
+  })
+})
+
+http.listen(3001, err=> {
+  if(err) console.log(err)
+  console.log("running")
 })
