@@ -4,3 +4,150 @@
   background-color: #f9f9f9;
   overflow-x: hidden;
 }
+
+h1, h2 {
+  text-align: center;
+}
+
+.signSection {
+  min-height: 60vh;
+  width: 100%;
+  background-color: #656565;
+  color: whitesmoke
+}
+
+.signSection h1 {
+  padding-top: 3rem;
+}
+
+.form {
+  width: 90vw;
+  min-height: 40vh;
+  padding: 0.5rem 0 2rem 0;
+  margin: 0 auto;
+}
+
+.control {
+  margin: 1rem auto;
+}
+
+.control label {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  margin: 0 10vw;
+  color: white;
+}
+
+.control input {
+  display: block;
+  width: 85vw;
+  margin: 0.3rem auto 0 auto;
+  padding: 0.2rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #230052;
+}
+
+.form button {
+  display: block;
+  width: 85vw;
+  margin: 1.8rem auto;
+  padding: 0.5rem 2rem;
+  border: 1.5px solid white;
+  border-radius: 25px;
+  background-color: #1f2b37;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (min-width: 360px) and (min-height: 640px) {
+  .control {
+    margin: 1.3rem auto;
+  }
+
+  .control input {
+    margin: 0.5rem auto 0.5rem auto;
+    padding: 0.5rem;
+  }
+
+  .form button {
+    margin: 2.5rem auto;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 410px) {
+  .control {
+    margin: 1.7rem auto;
+  }
+
+  .control input {
+    width: 70vw;
+  }
+
+  .control label {
+    margin: 0 13vw;
+    font-size: 1.3rem;
+  }
+
+  .form button {
+    width: 70vw;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .control input {
+    width: 60vw;
+  }
+
+  .control label {
+    margin: 0 22vw;
+    font-size: 1.5rem;
+  }
+
+  .form button {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .control {
+    margin: 1rem auto;
+  }
+
+  .control input {
+    width: 30vw;
+  }
+
+  .control label {
+    margin: 0 5vw;
+    font-size: 1rem;
+  }
+
+  .form button {
+    width: 30vw;
+  }
+
+  .form button:hover {
+    background-color: whitesmoke;
+    color: #1f2b37;
+  }
+}
+
+@media (min-width: 1366px) {
+  .control {
+    margin: 1.5rem auto;
+  } 
+
+  .control label {
+    font-size: 1.3rem;
+  }
+}
