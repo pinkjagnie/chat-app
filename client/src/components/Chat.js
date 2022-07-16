@@ -19,7 +19,8 @@ const Chat = ({ socket, username, room }) => {
         time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
       }
       await socket.emit("send_message", messageData);
-      setMessageList((list) => [...list, messageData])
+      setMessageList((list) => [...list, messageData]);
+      setCurrentMessage("");
     }
   };
 
@@ -49,7 +50,7 @@ const Chat = ({ socket, username, room }) => {
         })}
       </div>
       <div className={styles.chatFooter}>
-        <input type="text" placeholder="Write here" value={currentMessage} onChange={currentMessageHandler} />
+        <input type="text" placeholder="Write here" value={currentMessage} onChange={currentMessageHandler} onKeyPress={(event) => {event.key === "Enter" && sendMessage()}} />
         <button onClick={sendMessage}>&#9658;</button>
       </div>
     </div>
