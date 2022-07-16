@@ -11,6 +11,7 @@ const socket = io.connect("http://localhost:3001");
 const App = () => {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
+  const [showChat, setShowChat] = useState(false);
 
   const usernameHandler = (event) => {
     setUsername(event.target.value)
@@ -25,6 +26,7 @@ const App = () => {
 
     if (username !== "" && room !== "") {
       socket.emit("join_room", room);
+      setShowChat(true);
     }
 
     // setUsername("");
@@ -34,7 +36,8 @@ const App = () => {
   return (
     <div className="App">
       <h1>Hey, hi, hello</h1>
-      <h2>Wanna talk? Join some room!</h2>
+      {!showChat ? 
+      (<><h2>Wanna talk? Join some room!</h2>
       <div className="signSection">
         <h1>Sign in!</h1>
         <form className="form" onSubmit={joinRoom}>
@@ -48,8 +51,10 @@ const App = () => {
           </div>
           <button>Join room</button>
         </form>
-      </div>
-      <Chat socket={socket} username={username} room={room} />
+      </div></>)
+      :
+      (<Chat socket={socket} username={username} room={room} />)
+      }
     </div>
   );
 }
