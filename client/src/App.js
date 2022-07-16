@@ -27,8 +27,8 @@ const App = () => {
       socket.emit("join_room", room);
     }
 
-    setUsername("");
-    setRoom("")
+    // setUsername("");
+    // setRoom("")
   };
 
   return (
