@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ScrollToBottom from "react-scroll-to-bottom";
 
 import styles from "./chat.module.css";
 
@@ -32,12 +33,13 @@ const Chat = ({ socket, username, room }) => {
 
   return(
     <div className={styles.chatSection}>
-      <p>Chat Room - Live</p>
+      <p className={styles.title}>Chat Room - Live</p>
       <div className={styles.chatBox}>
         <div className={styles.chatHeader}>
           <div className={styles.room}><p>Room: {room}</p></div>
         </div>
         <div className={styles.chatBody}>
+          <ScrollToBottom className={styles.messageContainer}>
           {messageList.map((messageContent) => {
             return <div className={styles.message} style={username === messageContent.author ? {justifyContent: "flex-start"} : {justifyContent: "flex-end"}}>
               <div>
@@ -51,6 +53,7 @@ const Chat = ({ socket, username, room }) => {
               </div>
             </div>
           })}
+          </ScrollToBottom>
         </div>
         <div className={styles.chatFooter}>
           <input type="text" placeholder="Write here" value={currentMessage} onChange={currentMessageHandler} onKeyPress={(event) => {event.key === "Enter" && sendMessage()}} />
