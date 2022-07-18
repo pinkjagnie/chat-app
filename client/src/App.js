@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Header from './components/Header';
+
 import io from "socket.io-client";
 
 import Chat from './components/Chat';
@@ -35,11 +37,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Hey, hi, hello</h1>
+      <Header />
       {!showChat ? 
-      (<><h2>Wanna talk? Join some room!</h2>
-      <div className="signSection">
-        <h1>Sign in!</h1>
+      (<div className="signSection">
+        <h1>Wanna talk? Join some room!</h1>
         <form className="form" onSubmit={joinRoom}>
           <div className="control">
             <label htmlFor="username">Your name</label>
@@ -51,7 +52,7 @@ const App = () => {
           </div>
           <button>Join room</button>
         </form>
-      </div></>)
+      </div>)
       :
       (<Chat socket={socket} username={username} room={room} />)
       }
