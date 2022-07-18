@@ -30,9 +30,6 @@ const App = () => {
       socket.emit("join_room", room);
       setShowChat(true);
     }
-
-    // setUsername("");
-    // setRoom("")
   };
 
   return (

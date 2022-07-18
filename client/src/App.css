@@ -12,12 +12,16 @@ h1, h2 {
 .signSection {
   min-height: 60vh;
   width: 100%;
+  margin: 1.7rem auto;
   background-color: #656565;
-  color: whitesmoke
+  border-radius: 20px;
+  color: whitesmoke;
 }
 
 .signSection h1 {
+  width: 80%;
   padding-top: 3rem;
+  margin: 0 auto;
 }
 
 .form {
@@ -103,6 +107,13 @@ h1, h2 {
   }
 }
 
+@media (min-width: 600px) {
+  .signSection {
+    width: 90vw;
+
+  }
+}
+
 @media (min-width: 768px) and (orientation: portrait) {
   .control input {
     width: 60vw;
@@ -119,12 +130,20 @@ h1, h2 {
 }
 
 @media (min-width: 1024px) {
+  .signSection {
+    width: 60vw;
+  }
+
+  .form {
+    width: 50vw;
+  }
+
   .control {
     margin: 1rem auto;
   }
 
   .control input {
-    width: 30vw;
+    width: 40vw;
   }
 
   .control label {
@@ -139,6 +158,12 @@ h1, h2 {
   .form button:hover {
     background-color: whitesmoke;
     color: #1f2b37;
+  }
+}
+
+@media (min-width: 1280px) {
+  .signSection {
+    width: 50vw;
   }
 }
 
