@@ -9,25 +9,40 @@ h1, h2 {
   text-align: center;
 }
 
+.chatWrapper {
+  background-image: url("img/background_alpaca-1920_1280.png");
+  height: 100vh;
+  width: auto;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .signSection {
+  position: fixed;
+  top: 10vh;
+  left: 0;
   min-height: 60vh;
   width: 100%;
   margin: 1.7rem auto;
   background-color: #656565;
   border-radius: 20px;
   color: whitesmoke;
+  animation: slide-down 300ms ease-out forwards;
 }
 
-.signSection h1 {
+.signSection p {
   width: 80%;
-  padding-top: 3rem;
+  padding-top: 2rem;
   margin: 0 auto;
+  font-weight: bold;
+  text-align: center;
 }
 
 .form {
   width: 90vw;
   min-height: 40vh;
-  padding: 0.5rem 0 2rem 0;
+  padding: 0.5rem 0;
   margin: 0 auto;
 }
 
@@ -43,7 +58,8 @@ h1, h2 {
   color: white;
 }
 
-.control input {
+.control input,
+.control textarea {
   display: block;
   width: 85vw;
   margin: 0.3rem auto 0 auto;
@@ -52,47 +68,69 @@ h1, h2 {
   border: 1px solid #ccc;
 }
 
-.control input:focus {
+.control input:focus,
+.control textarea:focus {
   outline: none;
   border-color: #230052;
 }
 
 .form button {
   display: block;
-  width: 85vw;
+  width: 60vw;
   margin: 1.8rem auto;
   padding: 0.5rem 2rem;
   border: 1.5px solid white;
   border-radius: 25px;
   background-color: #1f2b37;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
 }
 
 @media (min-width: 360px) and (min-height: 640px) {
+  .signSection p {
+    font-size: 1.4rem;
+  }
+
   .control {
     margin: 1.3rem auto;
   }
 
-  .control input {
+  .control input,
+  .control textarea {
     margin: 0.5rem auto 0.5rem auto;
     padding: 0.5rem;
   }
 
   .form button {
-    margin: 2.5rem auto;
-    font-size: 2rem;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 390px) {
+  .signSection {
+    top: 18vh;
+    left: 0;
+  }
+
+  .form {
+    min-height: 30vh;
   }
 }
 
 @media (min-width: 410px) {
+  .signSection p {
+    font-size: 1.8rem;
+  }
+
   .control {
     margin: 1.7rem auto;
   }
 
-  .control input {
+  .control input,
+  .control textarea {
     width: 70vw;
   }
 
@@ -103,24 +141,42 @@ h1, h2 {
 
   .form button {
     width: 70vw;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 600px) {
   .signSection {
+    top: 18vh;
+    left: 5vw;
     width: 90vw;
-
   }
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
-  .control input {
+  .signSection {
+    top: 20vh;
+    left: 15vw;
+    width: 70vw;
+    min-height: 55vh;
+  }
+
+  .form {
+    width: 60vw;
+  }
+
+  .signSection p {
+    padding-top: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .control input,
+  .control textarea {
     width: 60vw;
   }
 
   .control label {
-    margin: 0 22vw;
+    margin: 0 8vw;
     font-size: 1.5rem;
   }
 
@@ -131,7 +187,13 @@ h1, h2 {
 
 @media (min-width: 1024px) {
   .signSection {
+    top: 20vh;
+    left: 20vw;
     width: 60vw;
+  }
+
+  .signSection p {
+    font-size: 2rem;
   }
 
   .form {
@@ -142,7 +204,8 @@ h1, h2 {
     margin: 1rem auto;
   }
 
-  .control input {
+  .control input,
+  .control textarea {
     width: 40vw;
   }
 
@@ -153,6 +216,7 @@ h1, h2 {
 
   .form button {
     width: 30vw;
+    font-size: 1.8rem;
   }
 
   .form button:hover {
@@ -163,6 +227,8 @@ h1, h2 {
 
 @media (min-width: 1280px) {
   .signSection {
+    top: 20vh;
+    left: 25vw;
     width: 50vw;
   }
 }
@@ -174,5 +240,16 @@ h1, h2 {
 
   .control label {
     font-size: 1.3rem;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

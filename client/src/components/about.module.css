@@ -1,0 +1,72 @@
+.aboutSection {
+  min-height: 60vh;
+  width: 100%;
+  margin: 1rem auto;
+  background-color: rgba(101, 101, 101, 0.9);
+  border-radius: 20px;
+  color: whitesmoke;
+}
+
+.aboutText {
+  width: 90vw;
+  padding: 0.5rem 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 360px) and (min-height: 640px) {
+  .aboutSection {
+    min-height: 50vh;
+  }
+  
+  .aboutText {
+    width: 70vw;
+    padding: 1rem 0;
+  }
+}
+
+@media (min-width: 390px) {
+  .aboutText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 410px) {
+  .aboutSection {
+    margin: 3rem auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .aboutSection {
+    width: 70vw;
+  }
+
+  .aboutText {
+    width: 50vw;
+    font-size: 1.4rem;
+  }
+}
+
+@media(min-width: 768px) {
+  .aboutSection {
+    min-height: 45vh;
+    width: 60vw;
+    margin: 4rem auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutSection {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutSection {
+    width: 50vw;
+  }
+
+  .aboutText {
+    width: 40vw;
+  }
+}

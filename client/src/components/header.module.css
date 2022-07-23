@@ -2,12 +2,13 @@
 .logo {
   height: 20vh;
   width: 100%;
+  background-color: rgba(245, 245, 245, 0.1);
 }
 
 .logo img {
   display: block;
   height: 90%;
   width: auto;
-  padding: 1rem;
+  padding: 0.3rem;
   margin: 0 auto;
 }

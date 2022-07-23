@@ -1,6 +1,6 @@
 import React from "react";
 
-import lamPic from "../img/lam_chat_210-150.png";
+import lamPic from "../img/alpaca_farm_250-150.svg";
 
 import styles from "./header.module.css";
 

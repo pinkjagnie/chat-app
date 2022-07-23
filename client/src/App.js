@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import ErrorPage from './pages/ErrorPage';
 
+import "./App.css";
+
 import io from "socket.io-client";
 
 const socket = io.connect("http://localhost:3001");
