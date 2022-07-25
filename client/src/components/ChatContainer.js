@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+
+import WelcomeAdmin from "./WelcomeAdmin";
 
 import styles from "./chatContainer.module.css";
 
 const ChatContainer = () => {
+  const [chooseMessage, setChooseMessage] = useState(false);
+
   return(
     <div className={styles.chatContainerSection}>
-      <div className={styles.welcomeAdmin}>
-        <p>Welcome to the Alpaca Farm Admin Panel.</p>
-        <p>Please select one of the conversations from the window on the left</p>
-      </div>
+      <WelcomeAdmin />
     </div>
   )
 };
