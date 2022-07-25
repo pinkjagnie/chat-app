@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #1f2b37;
 }
 
 .adminSection p.title {
@@ -24,4 +25,6 @@
   background-color: #1f2b37;
   border: 2px solid transparent;
   border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
 }

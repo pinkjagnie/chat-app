@@ -1,6 +1,7 @@
 import React from "react";
 
 import Contacts from "../components/Contacts";
+import ChatContainer from "../components/ChatContainer";
 
 import styles from "../components/admin.module.css"
 
@@ -10,7 +11,7 @@ const Admin = () => {
       <p className={styles.title}>Alpaca Farm Admin Panel</p>
       <div className={styles.adminContainer}>
         <Contacts />
-        {/* <ChatContainer /> */}
+        <ChatContainer />
       </div>
     </div>
   )
