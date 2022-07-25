@@ -1,0 +1,31 @@
+.contactsSection {
+  height: 88vh;
+  width: 30vw;
+  background-color: #1f2b37;
+  border: 5px solid rgba(245, 245, 245, 0.9);
+  border-radius: 10px;
+  color:rgb(245, 245, 245);
+  position: relative;
+  top: 1rem;
+  left: 1rem;
+}
+
+.contactsSection .contactScroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.contactsSection .contactScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.singleContact {
+  border-bottom: 3px solid rgb(245, 245, 245);
+  padding: 0 1rem;
+}
+
+.messageContact p {
+  padding-left: 0.5rem;
+}
