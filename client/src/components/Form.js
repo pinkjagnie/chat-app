@@ -7,46 +7,56 @@ import io from "socket.io-client";
 const socket = io.connect("http://localhost:3001");
 
 const Form = () => {
-  const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
+  const [message, setMessage] = useState("");
   const [showChat, setShowChat] = useState(false);
 
-  const usernameHandler = (event) => {
-    setUsername(event.target.value)
+  const messageHandler = (event) => {
+    setMessage(event.target.value)
   };
 
   const roomHandler = (event) => {
     setRoom(event.target.value)
   };
 
-  const joinRoom = (event) => {
+  const startChat = (event) => {
     event.preventDefault();
 
-    if (username !== "" && room !== "") {
+    if (room !== "" && message !== "") {
+      const messageData = {
+        room: room,
+        author: room,
+        message: message,
+        time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
+      }
       socket.emit("join_room", room);
+      socket.emit("send message", messageData)
       setShowChat(true);
     }
+    console.log(message);
+    console.log(room);
   };
+
 
   return(
     <>
       {!showChat ? 
       (<div className="signSection">
         <p>Have any questions? Write to us</p>
-        <form className="form" onSubmit={joinRoom}>
+        <form className="form" onSubmit={startChat}>
           <div className="control">
-            <label htmlFor="username">Your name</label>
-            <input type="text" id="username" value={username} onChange={usernameHandler} />
+            <label htmlFor="userEmail">Your email</label>
+            <input type="email" id="userEmail" value={room} onChange={roomHandler} />
           </div>
           <div className="control">
-            <label htmlFor="room">Your message</label>
-            <textarea rows="7" name="room" value={room} onChange={roomHandler} />
+            <label htmlFor="message">Your message</label>
+            <textarea rows="7" name="message" value={message} onChange={messageHandler} />
           </div>
           <button>Send</button>
         </form>
       </div>)
       :
-      (<Chat socket={socket} username={username} room={room} />)
+      (<Chat socket={socket} room={room} message={message} />)
       }
     </>
   )
