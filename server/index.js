@@ -14,7 +14,7 @@ const firebaseConfig = {
   measurementId: "G-PZMZQS4PN5"
 };
 
-var serviceAccount = require("/home/szymon/Pobrane/chat-app-a4821-firebase-adminsdk-n29pi-f2d0b2217c.json");
+var serviceAccount = require("/home/olga/Projekty/chat-app/server/chat-app-a4821-firebase-adminsdk-n29pi-f2d0b2217c.json");
 
 // initialize firebase
 initializeApp({
