@@ -1,0 +1,278 @@
+.currentClientSection {
+  height: 100%;
+  width: 100%;
+}
+
+.clientBox {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(245, 245, 245, 0.7);
+  border: 5px solid rgba(245, 245, 245, 0.7);
+  border-radius: 10px;
+}
+
+.clientHeader {
+  height: 50px;
+  background-color: rgba(31, 43, 55, 0.95);
+  border: 2px solid rgba(31, 43, 55, 0.95);
+  border-radius: 5px;
+  color: whitesmoke
+}
+
+.client p {
+  line-height: 50px;
+  padding-left: 1.5rem;
+  margin-top: 0;
+}
+
+.clientBody {
+  height: 70%;
+  width: 100%;
+}
+
+
+.clientBox .clientBody .messageContainer {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.clientBox .clientBody .messageContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.clientBox .clientBody .message {
+  height: auto;
+  padding: 10px;
+  display: flex;
+}
+
+.clientBox .clientBody .message .messageContent {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  background-color: #29772d;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.messageMeta .author {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.clientBox .clientBody .message .messageMeta {
+  display: flex;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+
+
+.clientFooter {
+  height: 18%;
+  width: 100%;
+  text-align: center;
+}
+
+.clientFooter button {
+  height: 70%;
+  padding: 0 1rem;
+  border: 2px solid #1f2b37;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #1f2b37;
+  color: lightgray;
+  cursor: pointer;
+}
+
+/* .currentClientSection {
+  height: 90vh;
+  width: 100%;
+}
+
+.clientBox {
+  width: 90vw;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.clientBox p {
+  margin: 0;
+}
+
+.clientBox .clientHeader {
+  height: 45px;
+  background: #263238;
+  position: relative;
+  cursor: pointer;
+}
+
+.clientBox .clientHeader p {
+  display: block;
+  padding: 0 1em 0 2em;
+  color: #fff;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.clientBox .clientBody {
+  height: calc(400px - (45px + 70px));
+  border: 1px solid #263238;
+  background: #fff;
+  position: relative;
+}
+
+.clientBox .clientBody .messageContainer {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.clientBox .clientBody .messageContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.clientBox .clientBody .message {
+  height: auto;
+  padding: 10px;
+  display: flex;
+}
+
+.clientBox .clientBody .message .messageContent {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  background-color: #43a047;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.messageMeta .author {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.clientBox .clientBody .message .messageMeta {
+  display: flex;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.clientBox .clientFooter {
+  height: 40px;
+  border: 1px solid #263238;
+  border-top: none;
+  display: flex;
+}
+
+.clientBox .clientFooter input {
+  height: 100%;
+  flex: 85%;
+  border: 0;
+  padding: 0;
+  text-indent: 0.7em;
+  font-size: 1em;
+  border-right: 1px dotted #607d8b;
+  outline: none;
+}
+
+.clientBox .clientFooter button {
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex: 15%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 25px;
+  color: lightgray;
+}
+
+.clientBox .clientFooter button:hover {
+  color: #43a047;
+}
+
+@media (min-width: 360px) {
+  .clientBox {
+    width: 90vw;
+    height: 500px;
+  }
+
+  .clientBox .clientBody {
+    height: calc(500px - (45px + 70px));
+  }
+}
+
+@media (min-width: 390px) {
+  .clientBox {
+    width: 90vw;
+    height: 650px;
+  }
+
+  .clientBox .clientBody {
+    height: calc(650px - (45px + 70px));
+  }
+}
+
+@media (min-width: 410px) {
+  .clientBox {
+    width: 90vw;
+    height: 700px;
+  }
+
+  .clientBox .clientBody {
+    height: calc(700px - (45px + 70px));
+  }
+}
+
+@media (min-width: 600px) {
+  .clientBox {
+    width: 61vw;
+    height: 615px;
+  }
+
+  .clientBox .clientBody {
+    height: calc(615px - (45px + 70px));
+  }
+} */
+
+/* @media (min-width: 1024px) {
+  .clientBox {
+    width: 60vw;
+    height: 500px;
+  }
+
+  .clientBox .clientBody {
+    height: calc(500px - (45px + 70px));
+  }
+} */
+
+/* @media (min-width: 1280px) {
+  .clientBox {
+    width: 50vw;
+    height: 500px;
+  }
+} */
