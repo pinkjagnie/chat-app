@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
-import styles from "./contacts.module.css";
+import "./contacts.css";
 
 const Contacts = (props) => {
+  const [currentSelected, setCurrentSelected] = useState(undefined);
+
+  const changeCurrentChat = (contact, index) => {
+    setCurrentSelected(index);
+    props.changeChat(contact);
+  };
+  
   return(
-    <div className={styles.contactsSection}>
-      <ScrollToBottom className={styles.contactScroll}>
-        {props.data.contacts.map((contact) => {
+    <div className="contactsSection">
+      <ScrollToBottom className="contactScroll">
+        {props.data.contacts.map((contact, index) => {
           return (
-          <div className={styles.singleContact} key={contact.id}>
-            <div className={styles.emailContact}>
+          <div className={`singleContact ${index === currentSelected ? "selected" : ""}`} key={contact.id} onClick={() => changeCurrentChat(contact, index)}>
+            <div className="emailContact">
               <p>{contact.id}</p>
             </div>
-            <div className={styles.messageContact}>
+            <div className="messageContact">
               <p>{contact.messages[contact.messages.length - 1].message}</p>
             </div>
           </div>)
