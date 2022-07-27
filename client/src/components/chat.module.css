@@ -42,13 +42,20 @@
   background-color: #00ca56;
 }
 
+.chatBox .chatHeader .room .closeButton {
+  font-size: 30px;
+  margin-left: 0.6rem;
+  color: #ff5c5c;
+  cursor: pointer;
+}
+
 .chatBox .chatHeader .room p {
   display: block;
   padding: 0 1em;
   color: #fff;
   font-weight: 700;
   line-height: 45px;
-  font-size: 14px
+  font-size: 12px
 }
 
 .chatBox .chatBody {
@@ -149,7 +156,7 @@
   }
 
   .chatBox .chatHeader .room p {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -162,6 +169,10 @@
   .chatBox .chatBody {
     height: calc(600px - (45px + 70px));
   }
+
+  .chatBox .chatHeader .room .closeButton {
+    margin-left: 1.5rem;
+  }
 }
 
 @media (min-width: 410px) {
@@ -172,6 +183,14 @@
 
   .chatBox .chatBody {
     height: calc(650px - (45px + 70px));
+  }
+
+  .chatBox .chatHeader .room p {
+    font-size: 16px;
+  }
+
+  .chatBox .chatHeader .room .closeButton {
+    margin-left: 1rem;
   }
 }
 
@@ -195,6 +214,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .chatBox .chatHeader .room .closeButton {
+    margin-left: 8rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .chat {
     top: 25vh;
@@ -213,6 +238,10 @@
   .chatBox .chatHeader .room .onlineDot {
     margin-left: 2rem;
   }
+
+  .chatBox .chatHeader .room .closeButton {
+    margin-left: 14rem;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -224,6 +253,10 @@
   .chatBox {
     width: 50vw;
     height: 500px;
+  }
+
+  .chatBox .chatHeader .room .closeButton {
+    margin-left: 17rem;
   }
 }
 

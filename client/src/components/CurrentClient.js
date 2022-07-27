@@ -12,6 +12,10 @@ const CurrentClient = ({currentChat}) => {
     setOpenClientChat(true);
   };
 
+  const closeClientChatHandler = () => {
+    setOpenClientChat(false);
+  };
+
   console.log(currentChat.messages)
 
   return(
@@ -44,7 +48,7 @@ const CurrentClient = ({currentChat}) => {
         </div>
       </div>
     </div>
-    {openClientChat && <AdminChat currentChat={currentChat} />}
+    {openClientChat && <AdminChat currentChat={currentChat} closeClientChat={closeClientChatHandler} />}
     </>
   )
 };

@@ -3,7 +3,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 
 import styles from "./adminChat.module.css";
 
-const AdminChat = ({ socket, username, room, currentChat }) => {
+const AdminChat = ({ socket, username, room, currentChat, closeClientChat }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
@@ -33,7 +33,7 @@ const AdminChat = ({ socket, username, room, currentChat }) => {
 
   let clientMessage = currentChat.messages.map((messageContent) => {
     return(
-      <div className={styles.message} style={{justifyContent: "flex-start"}}>
+      <div className={styles.message} style={{justifyContent: "flex-start"}} key={messageContent.time}>
         <div>
           <div className={styles.messageContent}>
             <p>{messageContent.message}</p>
@@ -54,6 +54,7 @@ const AdminChat = ({ socket, username, room, currentChat }) => {
             <div className={styles.room}>
               <div className={styles.onlineDot}></div>
               <p>Live chat with {currentChat.id}</p>
+              <div className={styles.closeButton} onClick={() => closeClientChat()}>&#10006;</div>
             </div>
           </div>
           <div className={styles.chatBody}>

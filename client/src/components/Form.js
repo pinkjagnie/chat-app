@@ -39,6 +39,12 @@ const Form = () => {
     console.log(room);
   };
 
+  const closeChatHandler = () => {
+    setShowChat(false);
+    setRoom("");
+    setMessage("")
+  };
+
   return(
     <>
       {!showChat ? 
@@ -57,7 +63,7 @@ const Form = () => {
         </form>
       </div>)
       :
-      (<Chat socket={socket} room={room} username={room} messageData={messageData} />)
+      (<Chat socket={socket} room={room} username={room} messageData={messageData} closeChatHandler={closeChatHandler} />)
       }
     </>
   )

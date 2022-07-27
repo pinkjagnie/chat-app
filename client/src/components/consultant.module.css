@@ -5,6 +5,7 @@
 
 .lamaPicture {
   position: relative;
+  cursor: pointer;
 }
 
 .lamaPicture img {
