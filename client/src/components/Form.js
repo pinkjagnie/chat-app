@@ -30,13 +30,12 @@ const Form = () => {
         time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
       }
       socket.emit("join_room", room);
-      socket.emit("send message", messageData)
+      socket.emit("send_message", messageData)
       setShowChat(true);
     }
     console.log(message);
     console.log(room);
   };
-
 
   return(
     <>
