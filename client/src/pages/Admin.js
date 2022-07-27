@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import Contacts from "../components/Contacts";
-import ChatContainer from "../components/ChatContainer";
+import Contacts from "../components/Admin/Contacts";
+import ChatContainer from "../components/Admin/ChatContainer";
 
-import styles from "../components/admin.module.css"
+import styles from "../components/Admin/admin.module.css";
 
 function parse(obj) {
  let tmp_arr = []
