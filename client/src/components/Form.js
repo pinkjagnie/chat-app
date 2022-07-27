@@ -10,6 +10,7 @@ const Form = () => {
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
   const [showChat, setShowChat] = useState(false);
+  const [messageData, setMessageData] = useState([]);
 
   const messageHandler = (event) => {
     setMessage(event.target.value)
@@ -32,6 +33,7 @@ const Form = () => {
       socket.emit("join_room", room);
       socket.emit("send_message", messageData)
       setShowChat(true);
+      setMessageData(messageData)
     }
     console.log(message);
     console.log(room);
@@ -55,7 +57,7 @@ const Form = () => {
         </form>
       </div>)
       :
-      (<Chat socket={socket} room={room} message={message} />)
+      (<Chat socket={socket} room={room} username={room} messageData={messageData} />)
       }
     </>
   )
