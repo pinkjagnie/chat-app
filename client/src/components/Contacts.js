@@ -9,6 +9,7 @@ const Contacts = (props) => {
   const changeCurrentChat = (contact, index) => {
     setCurrentSelected(index);
     props.changeChat(contact);
+    console.log(contact)
   };
   
   return(

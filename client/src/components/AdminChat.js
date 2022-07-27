@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 
-import styles from "./chat.module.css";
+import styles from "./adminChat.module.css";
 
-const Chat = ({ socket, username, room, messageData }) => {
+const AdminChat = ({ socket, username, room, currentChat }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
@@ -25,23 +25,26 @@ const Chat = ({ socket, username, room, messageData }) => {
     }
   };
 
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageList((list) => [...list, data])
-    })
-  }, [socket]);
+  // useEffect(() => {
+  //   socket.on("receive_message", (data) => {
+  //     setMessageList((list) => [...list, data])
+  //   })
+  // }, [socket]);
 
-  let clientMessage = <div className={styles.message} style={{justifyContent: "flex-start"}}>
-    <div>
-      <div className={styles.messageContent}>
-        <p>{messageData.message}</p>
+  let clientMessage = currentChat.messages.map((messageContent) => {
+    return(
+      <div className={styles.message} style={{justifyContent: "flex-start"}}>
+        <div>
+          <div className={styles.messageContent}>
+            <p>{messageContent.message}</p>
+          </div>
+          <div className={styles.messageMeta}>
+            <p className={styles.time}>{messageContent.time}</p>
+            <p className={styles.author}>{messageContent.author}</p>
+          </div>
+        </div>
       </div>
-      <div className={styles.messageMeta}>
-        <p className={styles.time}>{messageData.time}</p>
-        <p className={styles.author}>{messageData.author}</p>
-      </div>
-    </div>
-  </div>;
+    )});
 
   return(
     <div className={styles.chatSection}>
@@ -50,7 +53,7 @@ const Chat = ({ socket, username, room, messageData }) => {
           <div className={styles.chatHeader}>
             <div className={styles.room}>
               <div className={styles.onlineDot}></div>
-              <p>Live chat with our alpaca consultant</p>
+              <p>Live chat with {currentChat.id}</p>
             </div>
           </div>
           <div className={styles.chatBody}>
@@ -81,4 +84,4 @@ const Chat = ({ socket, username, room, messageData }) => {
   )
 };
 
-export default Chat;
+export default AdminChat;

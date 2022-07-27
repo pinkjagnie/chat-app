@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
+
+import AdminChat from "./AdminChat";
 
 import styles from "./currentClient.module.css";
 
 const CurrentClient = ({currentChat}) => {
+  const [openClientChat, setOpenClientChat] = useState(false);
+
+  const clientChatHandler = () => {
+    setOpenClientChat(true);
+  };
+
   console.log(currentChat.messages)
 
   return(
+    <>
     <div className={styles.currentClientSection}>
       <div className={styles.clientBox}>
         <div className={styles.clientHeader}>
@@ -31,10 +40,12 @@ const CurrentClient = ({currentChat}) => {
           </ScrollToBottom>
         </div>
         <div className={styles.clientFooter}>
-          <button>&#9658; Click here to go to conversation with this client</button>
+          <button onClick={clientChatHandler}>&#9658; Click here to go to conversation with this client</button>
         </div>
       </div>
     </div>
+    {openClientChat && <AdminChat currentChat={currentChat} />}
+    </>
   )
 };
 
