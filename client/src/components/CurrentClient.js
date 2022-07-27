@@ -3,13 +3,21 @@ import ScrollToBottom from "react-scroll-to-bottom";
 
 import AdminChat from "./AdminChat";
 
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:3001");
+
 import styles from "./currentClient.module.css";
 
 const CurrentClient = ({currentChat}) => {
   const [openClientChat, setOpenClientChat] = useState(false);
+  
+  let username = "Alpaca Admin";
+  let room = currentChat.id;
 
   const clientChatHandler = () => {
     setOpenClientChat(true);
+    socket.emit("join_room", room);
   };
 
   const closeClientChatHandler = () => {
@@ -48,7 +56,7 @@ const CurrentClient = ({currentChat}) => {
         </div>
       </div>
     </div>
-    {openClientChat && <AdminChat currentChat={currentChat} closeClientChat={closeClientChatHandler} />}
+    {openClientChat && <AdminChat currentChat={currentChat} socket={socket} username={username} room={currentChat.id} closeClientChat={closeClientChatHandler} />}
     </>
   )
 };

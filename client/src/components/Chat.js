@@ -28,8 +28,11 @@ const Chat = ({ socket, username, room, messageData, closeChatHandler }) => {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data])
-    })
+    });
+    console.log("otrzymałem wiadomość");
+    console.log(messageList)
   }, [socket]);
+  
 
   let clientMessage = <div className={styles.message} style={{justifyContent: "flex-start"}}>
     <div>

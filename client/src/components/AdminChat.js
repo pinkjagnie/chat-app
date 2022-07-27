@@ -3,6 +3,10 @@ import ScrollToBottom from "react-scroll-to-bottom";
 
 import styles from "./adminChat.module.css";
 
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:3001");
+
 const AdminChat = ({ socket, username, room, currentChat, closeClientChat }) => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -19,21 +23,23 @@ const AdminChat = ({ socket, username, room, currentChat, closeClientChat }) => 
         message: currentMessage,
         time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
       }
+      socket.emit("join_room", room);
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
     }
   };
 
-  // useEffect(() => {
-  //   socket.on("receive_message", (data) => {
-  //     setMessageList((list) => [...list, data])
-  //   })
-  // }, [socket]);
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data])
+    })
+  }, [socket]);
+
 
   let clientMessage = currentChat.messages.map((messageContent) => {
     return(
-      <div className={styles.message} style={{justifyContent: "flex-start"}} key={messageContent.time}>
+      <div className={styles.message} style={{justifyContent: "flex-end"}} key={messageContent.time}>
         <div>
           <div className={styles.messageContent}>
             <p>{messageContent.message}</p>
