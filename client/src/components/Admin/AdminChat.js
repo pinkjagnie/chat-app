@@ -18,12 +18,12 @@ const AdminChat = ({ socket, username, room, currentChat, closeClientChat }) => 
   const sendMessage = async () => {
     if(currentMessage !== "") {
       const messageData = {
-        room: room,
+        room: room.replace("^", "."),
         author: username,
         message: currentMessage,
         time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
       }
-      socket.emit("join_room", room);
+      socket.emit("join_room", room.replace("^", "."));
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
@@ -41,7 +41,7 @@ const AdminChat = ({ socket, username, room, currentChat, closeClientChat }) => 
     return(
       <div className={styles.message} style={{justifyContent: "flex-end"}} key={messageContent.time}>
         <div>
-          <div className={styles.messageContent}>
+          <div className={styles.messageContent} style={{backgroundColor: "cornflowerblue"}}>
             <p>{messageContent.message}</p>
           </div>
           <div className={styles.messageMeta}>
