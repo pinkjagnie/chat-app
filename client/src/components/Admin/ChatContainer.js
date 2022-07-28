@@ -19,8 +19,6 @@ const ChatContainer = (props) => {
     };
   }, []);
 
-  // console.log(currentChat)
-
   return(
     <div className={styles.chatContainerSection}>
       {!currentChat && <WelcomeAdmin />}

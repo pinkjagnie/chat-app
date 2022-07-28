@@ -29,8 +29,6 @@ const Chat = ({ socket, username, room, messageData, closeChatHandler }) => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data])
     });
-    console.log("otrzymałem wiadomość");
-    console.log(messageList)
   }, [socket]);
   
 

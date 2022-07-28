@@ -35,8 +35,6 @@ const Form = () => {
       setShowChat(true);
       setMessageData(messageData)
     }
-    console.log(message);
-    console.log(room);
   };
 
   const closeChatHandler = () => {

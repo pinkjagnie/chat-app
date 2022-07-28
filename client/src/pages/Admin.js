@@ -14,7 +14,6 @@ function parse(obj) {
     for (const key1 in obj[key].msgs) {
       let message = {}
       let tmp = obj[key].msgs[key1]
-      // console.log(tmp)
       message.author = tmp.author
       message.message = tmp.message
       message.time = tmp.time
@@ -22,7 +21,6 @@ function parse(obj) {
     }
     elem.messages = tmp_arr_msg
     tmp_arr_msg = []
-    // console.log(elem)
     tmp_arr.push(elem)
   }
   return tmp_arr
@@ -59,7 +57,6 @@ const Admin = () => {
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
-    // console.log(chat)
   };
 
   return(

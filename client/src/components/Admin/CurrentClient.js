@@ -24,8 +24,6 @@ const CurrentClient = ({currentChat}) => {
     setOpenClientChat(false);
   };
 
-  console.log(currentChat.messages)
-
   return(
     <>
     <div className={styles.currentClientSection}>
