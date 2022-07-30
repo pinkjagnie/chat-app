@@ -6,7 +6,7 @@ import Consultant from "../components/Consultant";
 
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("http://server.plnkjagnie.pl");
 
 const Home = () => {
  

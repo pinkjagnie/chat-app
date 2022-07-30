@@ -5,7 +5,7 @@ import styles from "./adminChat.module.css";
 
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("http://server.plnkjagnie.pl");
 
 const AdminChat = ({ socket, username, room, currentChat, closeClientChat }) => {
   const [currentMessage, setCurrentMessage] = useState("");
