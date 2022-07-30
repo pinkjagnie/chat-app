@@ -5,7 +5,7 @@ import AdminChat from "./AdminChat";
 
 import io from "socket.io-client";
 
-const socket = io.connect("http://server.plnkjagnie.pl");
+const socket = io.connect("http://server.pinkjagnie.pl");
 
 import styles from "./currentClient.module.css";
 
